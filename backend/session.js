@@ -48,14 +48,14 @@ const erouter = (usernames, pfps, settings) => {
         let pfp = await fetchpfp(data.uid);
 
         let embed = new discord.MessageEmbed()
-            .setTitle(`${data.type.name} is now being hosted and will commence shortly!`)
+            .setTitle(`🏨 Hotel ${data.type.name}`)
             .setColor('GREEN')
             .setTimestamp()
             .setAuthor(username, pfp, `https://www.roblox.com/users/${data.uid}`)
-            .setDescription(`A ${data.type.name} is now being hosted by ${username}! Join the game below to attend this session.`)
-            .addField('Gamelink', `https://www.roblox.com/games/${data.type.gid}/-`, true)
+            .setDescription(`👋 ${username} is hosting a shift at Nature Hotels, be sure to join to book a room, visit our club or just chill! Promotions may be given by SHRs to active members. `)
+            .addField('Gamelink', `https://www.roblox.com/games/${data.type.gid}/play-nature`, true)
             .setImage(data.thumbnail)
-            .setFooter({ text: `Tovy Sessions` });
+            .setFooter({ text: `Nature Hotels` });  
 
         let components = new discord.MessageActionRow()
             .addComponents(
@@ -83,12 +83,12 @@ const erouter = (usernames, pfps, settings) => {
         let pfp = await fetchpfp(data.uid);
 
         let embed = new discord.MessageEmbed()
-            .setTitle(`${data.type.name} ended`)
+            .setTitle(`📢 ${data.type.name} Ended`)
             .setColor('RED')
             .setTimestamp()
             .setAuthor(username, pfp, `https://www.roblox.com/users/${data.uid}`)
-            .setDescription(`The ${data.type.name} hosted by ${username} has ended! We will host more very soon don't worry`)
-            .setFooter({ text: `Tovy sessions` });
+            .setDescription(`${username}'s ${data.type.name} has finished, we apologise if you were unable to come. Missed it? Be sure to attend another later on in the day!`)
+            .setFooter({ text: `Nature Hotels` });
 
 
         let msg = await webhookc.editMessage(data.did, { content: null, embeds: [embed], components: [] }).catch(err => {
