@@ -53,7 +53,7 @@ const erouter = (usernames, pfps, settings) => {
             .setTimestamp()
             .setAuthor(username, pfp, `https://www.roblox.com/users/${data.uid}`)
             .setDescription(`👋 ${username} is hosting a shift at Nature Hotels, be sure to join to book a room, visit our club or just chill! Promotions may be given by SHRs to active members. `)
-            .addField('Gamelink', `https://www.roblox.com/games/${data.type.gid}/play-nature`, true)
+            .addField('Game Link', `https://www.roblox.com/games/${data.type.gid}/play-nature`, true)
             .setImage(data.thumbnail)
             .setFooter({ text: `Nature Hotels` });  
 
