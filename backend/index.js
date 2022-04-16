@@ -48,10 +48,6 @@ app.use(cookieSession({
     httpOnly: false
 }));
 
-process.on('unhandledRejection', (error) => {
-    console.log(error)
-});
-
 (async () => {
     let configforgroup = await db.config.findOne({ name: 'group' });
     if (!configforgroup) return;
